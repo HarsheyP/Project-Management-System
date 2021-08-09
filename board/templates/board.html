@@ -53,7 +53,7 @@
                     <div class="card board-card border-bottom-dark py-2" style="width: 18rem;">
                         <div class="card-body board-card-body" id="ToDo">
                             <h5 class="card-title">To Do</h5>
-                            {% for x in ThisBoard %}
+                            {% for x in card %}
     
                                 {% if x.title_id == 1 %}
     
@@ -75,7 +75,7 @@
                     <div class="card board-card border-bottom-dark py-2" style="width: 18rem;">
                         <div class="card-body board-card-body" id="InProgress">
                             <h5 class="card-title">In Progress</h5>
-                            {% for x in ThisBoard %}
+                            {% for x in card %}
     
                                 {% if x.title_id == 2 %}
     
@@ -95,7 +95,7 @@
                     <div class="card board-card border-bottom-dark py-2" style="width: 18rem;">
                         <div class="card-body board-card-body" id="CodeReview">
                             <h5 class="card-title">Code review</h5>
-                            {% for x in ThisBoard %}
+                            {% for x in card %}
     
                                 {% if x.title_id == 3 %}
     
@@ -115,7 +115,7 @@
                     <div class="card board-card border-bottom-dark py-2" style="width: 18rem;">
                         <div class="card-body board-card-body" id="Testing">
                             <h5 class="card-title">Testing</h5>
-                            {% for x in ThisBoard %}
+                            {% for x in card %}
     
                                 {% if x.title_id == 4 %}
     
@@ -135,7 +135,7 @@
                     <div class="card board-card border-bottom-dark py-2" style="width: 18rem;">
                         <div class="card-body board-card-body" id="Done">
                             <h5 class="card-title">Done</h5>
-                            {% for x in ThisBoard %}
+                            {% for x in card %}
     
                                 {% if x.title_id == 5 %}
     
