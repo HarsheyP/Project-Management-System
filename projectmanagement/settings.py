@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.redirects',
     'django_static_jquery',
     'board',
+    'rest_framework'
     #'crispy_forms'
 ]
 SITE_ID=1
@@ -85,7 +86,7 @@ WSGI_APPLICATION = 'projectmanagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'boards',
+        'NAME': 'board',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
@@ -159,3 +160,9 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}

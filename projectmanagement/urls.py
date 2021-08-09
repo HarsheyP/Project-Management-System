@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('accounts.urls'), name="accounts"),
     path('board/', include('board.urls'), name="board"),
-    path('temporaryhp/', views.homepage, name="homepage")
+    path('temporaryhp/', views.homepage, name="homepage"),
+    path('api-auth', include('rest_framework.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

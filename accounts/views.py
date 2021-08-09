@@ -15,8 +15,14 @@ from django.utils.encoding import force_bytes
 from django.core.mail import send_mail
 from django.contrib import messages
 
+
+from rest_framework.decorators import api_view
+
+from rest_framework.response import Response
+
 # Create your views here.
 from .models import *
+from board.models import *
 from .forms import CreateUserForm
 from .forms import LoginForm
 
@@ -71,6 +77,13 @@ def loginpage(request):
 def logoutView(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
-    return redirect('account:home')
+    return redirect('accounts:home')
 # when entered to admin shows messages, 
 # unable to redirect to dashboard
+
+@api_view(['GET'])
+def category_collection(request):
+    if request.method == 'GET':
+        posts = Board.objects.all().filter(user__username=request.user)
+        serializer = BoardSerializer(posts, many=True)
+        return Response(serializer.data)

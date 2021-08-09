@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import *
 from .forms import *
@@ -27,6 +27,8 @@ def project_detail(request, slug):
 
     pr = Board.objects.get(slug=slug)
 
-    context = {'pr':pr, 'ThisBoard':ThisBoard, 'form':form, 'title':Title}
+    card = InsideBoard.objects.filter(board_id=pr.board_id)
+
+    context = {'pr':pr, 'ThisBoard':ThisBoard, 'form':form, 'title':Title, 'card':card}
 
     return render(request, 'board.html', context)
