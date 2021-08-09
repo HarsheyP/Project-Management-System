@@ -7,6 +7,7 @@ from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate,logout
 from django.http import HttpResponse
+from django.db import connection
 from django.template.loader import render_to_string
 from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
@@ -69,7 +70,6 @@ def loginpage(request):
     else:
         form = LoginForm()
         return render(request,'register/login.html',context={"login_form":form})
-   # return render(request,'register/login.html',context={"login_form":form})
  
 
 #@login_required(login_url="login/")
