@@ -1,2 +1,2 @@
-# Project Management System
-IITISoC'21 Project
+# Project Management System (MEET-Up)
+### IITISoC'21 Project
